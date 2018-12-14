@@ -1,0 +1,33 @@
+{
+  "name": "timeoutcontrol",
+  "version": "0.1.0",
+  "description": "A JavaScript tool to control setTimeout operations.",
+  "main": "index.js",
+  "scripts": {
+    "build": "uglifyjs index.js -o index.min.js --ie8 --compress --mangle --comments /license/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yqlim/timeoutcontrol.git"
+  },
+  "keywords": [
+    "setTimeout",
+    "pause",
+    "resume",
+    "setTimeoutpause",
+    "setTimeoutControl",
+    "timeout",
+    "timeoutcontrol",
+    "timeoutcontroller",
+    "timeoutpauser"
+  ],
+  "author": "Yong Quan Lim <yqlim2394@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yqlim/timeoutcontrol/issues"
+  },
+  "homepage": "https://github.com/yqlim/timeoutcontrol#readme",
+  "devDependencies": {
+    "uglify-js": "^3.4.9"
+  }
+}
