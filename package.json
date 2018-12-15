@@ -4,7 +4,7 @@
   "description": "A JavaScript tool to control setTimeout operations.",
   "main": "index.js",
   "scripts": {
-    "build": "uglifyjs index.js -o index.min.js --ie8 --compress --mangle --comments /license/"
+    "build": "uglifyjs index.js -o index.min.js --ie8 --compress --mangle reserved=[\"TimeoutControl\"] --comments /license/"
   },
   "repository": {
     "type": "git",
