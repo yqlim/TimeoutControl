@@ -1,6 +1,6 @@
 {
   "name": "timeoutcontrol",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A JavaScript tool to control setTimeout operations.",
   "main": "index.js",
   "scripts": {
