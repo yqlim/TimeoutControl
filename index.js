@@ -46,66 +46,35 @@
             throw new RangeError('Failed to create TimeoutControl instance: second argument must be a positive number.');
 
 
-        defineProperties(this, {
+        this.params = Array.prototype.slice.call(arguments, 2);
+        this.duration = duration;
+        this.timeStart = new Date().getTime();
+        this.timeStop = this.timeStart;
 
-            // id of timeout
-            id: {
-                writable: true,
-                value: null
-            },
+        this.callback = function(callback){
 
-            // Params to be passed to `callback`
-            params: {
-                value: Array.prototype.slice.call(arguments, 2)
-            },
+            // Decorate to pass extra params into timeout callback
+            // Params are passed here instead of directly on setTimeout
+            // so that this can also act as polyfill for browsers that
+            // don't support native "rest" param on setTimeout
+            callback.apply(null, this.params);
 
-            duration: {
-                value: duration
-            },
+            this.timeStop = new Date().getTime();
 
-            timeStart: {
-                writable: true,
-                value: new Date().getTime()
+        }.bind(this, callback);
+
+        Object.defineProperty(this, 'timeLeft', {
+            get: function(){
+                var ret = this.duration - (this.timeStop - this.timeStart);
+                if (ret < 0) return 0;
+                return ret;
             }
-
         });
 
-        // Create these props separately
-        // because they depends on the above props
-        defineProperties(this, {
-
-            timeStop: {
-                writable: true,
-                value: this.timeStart
-            },
-
-            timeLeft: {
-                get: function(){
-                    var ret = this.duration - (this.timeStop - this.timeStart);
-                    return ret < 0 ? 0 : ret;
-                }
-            },
-
-            callback: {
-                value: function(callback){
-
-                    // [null].concat(this.params) to pass extra params into timeout callback
-                    // Params are passed here instead of directly on setTimeout
-                    // so that this can also act as polyfill for browsers that
-                    // don't support rest params on setTimeout
-                    callback.apply(null, this.params);
-
-                    this.timeStop = new Date().getTime();
-
-                }.bind(this, callback)
-            },
-
-            done: {
-                get: function(){
-                    return this.timeLeft === 0;
-                }
+        Object.defineProperty(this, 'done', {
+            get: function(){
+                return this.timeLeft === 0;
             }
-
         });
 
 
