@@ -1,1 +1,5 @@
-/test/
+/node_modules/
+/src/
+.editorconfig
+.gitignore
+rollup.config.js

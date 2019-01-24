@@ -2,15 +2,30 @@
   "name": "timeoutcontrol",
   "version": "0.2.0",
   "description": "A JavaScript tool to control setTimeout operations.",
-  "main": "index.js",
-  "browser": "index.min.js",
+  "main": "./lib/timeoutcontrol.js",
+  "browser": "./lib/timeoutcontrol.min.js",
+  "license": "MIT",
+  "author": "Yong Quan Lim <yqlim2394@gmail.com>",
   "scripts": {
-    "build": "uglifyjs index.js -o index.min.js --ie8 --compress --mangle reserved=[\"TimeoutControl\"] --comments /license/"
+    "build": "npm run rollup && npm run terser",
+    "rollup": "rollup -c",
+    "terser": "terser -c -m --comments /license/i -o ./lib/timeoutcontrol.min.js ./lib/timeoutcontrol.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "terser": "^3.14.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yqlim/timeoutcontrol.git"
   },
+  "bugs": {
+    "url": "https://github.com/yqlim/timeoutcontrol/issues"
+  },
+  "homepage": "https://github.com/yqlim/timeoutcontrol#readme",
   "keywords": [
     "setTimeout",
     "pause",
@@ -21,14 +36,5 @@
     "timeoutcontrol",
     "timeoutcontroller",
     "timeoutpauser"
-  ],
-  "author": "Yong Quan Lim <yqlim2394@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yqlim/timeoutcontrol/issues"
-  },
-  "homepage": "https://github.com/yqlim/timeoutcontrol#readme",
-  "devDependencies": {
-    "uglify-js": "^3.4.9"
-  }
+  ]
 }
