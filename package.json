@@ -1,6 +1,6 @@
 {
   "name": "timeoutcontrol",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A JavaScript tool to control setTimeout operations.",
   "main": "./lib/timeoutcontrol.js",
   "browser": "./lib/timeoutcontrol.min.js",
