@@ -3,15 +3,13 @@
 A JavaScript tool to imitate `setTimeout` functionality to extend control over it.
 
 
-# Install
+# Installation
 
 ## NPM
 
 `npm install timeoutcontrol`
 
-# API
-
-## Invoking
+# Usage
 
 `TimeoutControl` accepts any parameters that the native `setTimeout` will accept.
 
@@ -65,11 +63,11 @@ Resume the paused timeout.
 
 ### .restart()
 
-Restart the timeout from the beginning. `.timeStart`, `.timeStop` and `.id` will be updated.
+Clear the timeout, then start the timeout with the arguments previously passed to the instance.
 
 ### .clear()
 
-Cancel the timeout. `.done` will be updated to `true`.
+Cancel the timeout.
 
 # Demo
 
