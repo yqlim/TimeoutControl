@@ -6,6 +6,9 @@
   "browser": "./lib/timeoutcontrol.min.js",
   "license": "MIT",
   "author": "Yong Quan Lim <yqlim2394@gmail.com>",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "npm run rollup && npm run terser",
     "rollup": "rollup -c",
