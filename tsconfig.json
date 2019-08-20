@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib/",
+    "declaration": true,
+    "declarationMap": false,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "module": "esnext",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es2015"
+    ]
+  },
+  "include": [
+    "./src/"
+  ]
+}
