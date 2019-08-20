@@ -2,8 +2,8 @@
   "name": "timeoutcontrol",
   "version": "1.0.1",
   "description": "A JavaScript tool to control setTimeout operations.",
-  "main": "./lib/timeoutcontrol.js",
-  "browser": "./lib/timeoutcontrol.min.js",
+  "main": "./lib/index.js",
+  "browser": "./lib/index.min.js",
   "license": "MIT",
   "author": "Yong Quan Lim <yqlim2394@gmail.com>",
   "files": [
@@ -13,7 +13,7 @@
     "build": "npm run rollup && npm run terser",
     "dev": "rollup -c -w",
     "rollup": "rollup -c",
-    "terser": "terser -c -m --comments /license/i -o ./lib/timeoutcontrol.min.js ./lib/timeoutcontrol.js",
+    "terser": "terser -c -m --comments /license/i -o ./lib/index.min.js ./lib/index.js",
     "test": "mocha",
     "testing": "mocha -w"
   },

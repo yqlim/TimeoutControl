@@ -12,7 +12,7 @@ declare class TimeoutControl {
     private id;
     constructor(callback: (...params: any[]) => void, duration: number, ...params: any[]);
     protected readonly timeLeft: number;
-    protected readonly done: boolean;
+    done(): boolean;
     pause(): void;
     resume(): void;
     clear(): void;
