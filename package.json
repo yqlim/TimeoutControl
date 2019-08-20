@@ -11,12 +11,17 @@
   ],
   "scripts": {
     "build": "npm run rollup && npm run terser",
+    "dev": "rollup -c -w",
     "rollup": "rollup -c",
-    "terser": "terser -c -m --comments /license/i -o ./lib/timeoutcontrol.min.js ./lib/timeoutcontrol.js"
+    "terser": "terser -c -m --comments /license/i -o ./lib/timeoutcontrol.min.js ./lib/timeoutcontrol.js",
+    "test": "mocha",
+    "testing": "mocha -w"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
     "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-typescript2": "^0.22.1",
