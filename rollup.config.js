@@ -4,7 +4,7 @@ module.exports = {
   input: './src/index.ts',
   output: {
     name: 'TimeoutControl',
-    file: './lib/index.js',
+    file: './dist/index.js',
     format: 'umd',
     banner: '/*!\n * TimeoutControl\n * (c) 2019 Yong Quan Lim\n * Released under MIT License.\n */'
   },

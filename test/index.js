@@ -3,7 +3,7 @@ const expect = chai.expect;
 chai.should();
 
 
-const TimeoutControl = require('./../lib/');
+const TimeoutControl = require('./../dist/');
 
 
 const plusMinus = (value, expected, maxDeviation = 10) => {
